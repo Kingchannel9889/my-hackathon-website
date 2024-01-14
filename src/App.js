@@ -12,14 +12,15 @@ function App(){
   return(
     <div>
       <Router>
-        <Header />
+        <Home />
+        {/* <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/ourstory" element={<Ourstory />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
+        <Footer /> */}
       </Router>
     </div>
   );
