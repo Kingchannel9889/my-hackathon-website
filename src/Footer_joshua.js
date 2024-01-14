@@ -38,7 +38,7 @@ function Footer_joshua() {
           </div>
           <div className="col-md-3">
             <h5>Contact us</h5>
-            <p>Talk with us <a href='./contact' target='_blank'>here!</a></p>
+            <p>Talk with us <a href='./Contact_aaron' target='_blank'>here!</a></p>
           </div>
         </div>
       </div>
