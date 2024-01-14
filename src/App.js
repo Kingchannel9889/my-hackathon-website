@@ -12,7 +12,7 @@ import './App_king.css';
 function App(){
   return(
     <div>
-      <Home/>
+  
       <Router>
         <Header />
         <Routes>
