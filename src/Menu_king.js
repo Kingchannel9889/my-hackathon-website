@@ -1,5 +1,5 @@
-// MenuKing.js
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './StyleMenu_king.css';
 
 function MenuKing() {
@@ -28,19 +28,22 @@ function MenuKing() {
       <div className="row">
         {currentCoffeeTypes.map(coffeeType => (
           <div key={coffeeType._id} className="col-md-4 mb-4">
-            <div className="card">
-              <img src={coffeeType.image_url} className="card-img-top" alt={coffeeType.name} style={{ height: '200px', objectFit: 'cover' }} />
-              <div className="card-body">
-                <h5 className="card-title">{coffeeType.name}</h5>
-                <p className="card-text">Description: {coffeeType.description}</p>
-                <p className="card-text">Price: ${coffeeType.price}</p>
-                <p className="card-text">Region: {coffeeType.region}</p>
-                <p className="card-text">Weight: {coffeeType.weight} g</p>
-                <p className="card-text">Flavor Profile: {coffeeType.flavor_profile.join(', ')}</p>
-                <p className="card-text">Grind Options: {coffeeType.grind_option.join(', ')}</p>
-                <p className="card-text">Roast Level: {coffeeType.roast_level}</p>
+            <Link to={`/product/${coffeeType.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              {/* Use Link to navigate to the product details page */}
+              <div className="card">
+                <img src={coffeeType.image_url} className="card-img-top" alt={coffeeType.name} style={{ height: '200px', objectFit: 'cover' }} />
+                <div className="card-body">
+                  <h5 className="card-title">{coffeeType.name}</h5>
+                  <p className="card-text">Description: {coffeeType.description}</p>
+                  <p className="card-text">Price: ${coffeeType.price}</p>
+                  <p className="card-text">Region: {coffeeType.region}</p>
+                  <p className="card-text">Weight: {coffeeType.weight} g</p>
+                  <p className="card-text">Flavor Profile: {coffeeType.flavor_profile.join(', ')}</p>
+                  <p className="card-text">Grind Options: {coffeeType.grind_option.join(', ')}</p>
+                  <p className="card-text">Roast Level: {coffeeType.roast_level}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>

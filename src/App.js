@@ -6,6 +6,7 @@ import Home from './Homepage_joshua';
 import Menu from './Menu_king';
 import Ourstory from'./Our_story_fauzi';
 import Contact from './Contact_aaron';
+import Productdetail_king from './Productdetail_king';
 import './App_king.css';
 
 function App(){
@@ -18,6 +19,7 @@ function App(){
           <Route path="/menu" element={<Menu />} />
           <Route path="/ourstory" element={<Ourstory />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/product/:productId" element={<Productdetail_king />} />
         </Routes>
         <Footer />
       </Router>
