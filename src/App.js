@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRoute as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header_king';
 import Footer from './Footer_joshua';
 import Home from './Homepage_joshua';
@@ -23,6 +23,6 @@ function App(){
       </Router>
     </div>
   );
-};
+}
 
-export default App_king
+export default App;
