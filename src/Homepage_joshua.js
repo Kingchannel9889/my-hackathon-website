@@ -7,7 +7,7 @@ function Homepage_joshua() {
         <div className='home-page'>
             <div id='top' className="text-white text-center">
                 <h1 className="display-4">Odin Coffee</h1>
-                <p className="lead">The All-Father Coffee Experience awaits you</p>
+                <p className="lead">The All-Father Coffee Experience awaits you.</p>
             </div>
 
             <section id='pic1' className='container-fluid text-white text-center'>
