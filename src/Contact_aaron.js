@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import './Header_king.css'
+import './Header_king.css';
 import './style_aaron.css';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-
 function Contact_aaron() {
 
+  // For the Modal
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  // for the form 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -72,8 +74,6 @@ function Contact_aaron() {
           </div>
 
 
-
-
           <div class=" pl-5 pt-3 "  >
 
             <div class="card" style={{ height: '300px' }} >
@@ -82,7 +82,7 @@ function Contact_aaron() {
                 <h4 class="card-title cardheader-color">Contact Us :</h4>
                 <p class="card-text">
                   For more immediate assistance,</p>
-                <p> you can give us a call:  at 080-333333 </p>
+                <p> you can give us a call:  at 089 456 789 </p>
                 <p>or our WhatsApp line:  010-9999999</p>
                 <p>Our team is available during business hours to answer your queries.</p>
                 <button type="button" class="btn cardbtn-color float-right">
@@ -92,13 +92,7 @@ function Contact_aaron() {
               </div>
             </div>
 
-
           </div>
-
-
-
-
-
 
         </div>
 
@@ -130,8 +124,6 @@ function Contact_aaron() {
 
         </span>
       </div>
-
-
 
 
       <Modal show={show} onHide={handleClose}>
