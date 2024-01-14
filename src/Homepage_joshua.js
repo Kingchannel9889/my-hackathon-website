@@ -19,7 +19,7 @@ function Homepage_joshua() {
                 <div className="background-image">
                     <h1 className="display-4">Energy and Strength of Gods!</h1>
                     <p>Feel the Energy and Strength from Asgard.</p>
-                    <a className="btn btn-primary" href="./Menu_king" role="button">Check the Menu</a>
+                    <a className="btn btn-primary" href="./menu" role="button">Check the Menu</a>
                 </div>
             </section>
 
