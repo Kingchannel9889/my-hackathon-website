@@ -6,13 +6,13 @@ function Homepage_joshua() {
     return (
         <div className='home-page'>
             <div id='top' className="text-white text-center">
-                <img id="pattern" className="d-block" src="vikingpat.png" />
+                {/* <img id="pattern" className="d-block" src="vikingpat.png" /> */}
                 <img id="logo" className="" src="odin.png" />
-                <img id="shield1" className="" src="vikingshield.png" />
-                <img id="shield2" className="" src="vikingshield.png" />
-                <h1 className="display-4">Odin Coffee</h1>
+                {/* <img id="shield1" className="" src="vikingshield.png" />
+                <img id="shield2" className="" src="vikingshield.png" /> */}
+                <h1 id='title' className="display-4">Odin Coffee</h1>
                 <p id="slogan" className="lead">The All-Father Coffee Experience awaits you.</p>
-                <img id="pattern" className="d-block" src="vikingpat.png" />
+                {/* <img id="pattern" className="d-block" src="vikingpat.png" /> */}
             </div>
 
             <section id='pic1' className='container-fluid text-white text-center'>
