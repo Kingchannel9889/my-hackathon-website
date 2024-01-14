@@ -1,10 +1,11 @@
-/* Style_fauzi.css */
-
-/* General styling */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f5f5f5;
   color: #333;
+} 
+
+#carousel-inner{
+  margin: auto;
 }
 
 .container {
@@ -13,7 +14,6 @@ body {
   padding: 20px;
 }
 
-/* Carousel styling */
 .carousel-image {
   margin: 0 auto; 
   max-width: 100%; 
@@ -21,17 +21,6 @@ body {
   width: 800px; 
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #007bff;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: #0056b3; 
+h1, p{
+  text-align: center;
 }
