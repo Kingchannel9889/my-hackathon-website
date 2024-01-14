@@ -3,7 +3,8 @@ import './Header_king.css';
 import './style_aaron.css';
 
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { Modal } from 'react-bootstrap';
+
 
 
 function Contact_aaron() {
