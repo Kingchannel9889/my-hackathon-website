@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Header_king.css';
 import './style_aaron.css';
 
 import Button from 'react-bootstrap/Button';
@@ -16,10 +15,13 @@ function Contact_aaron() {
   const handleShow = () => setShow(true);
 
 
-  // for the form 
+  // For the Form 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  // For Email validation
+  const [validEmail, setValidEmail] = useState(true);
 
 
   const handleNameChange = (event) => {
@@ -28,18 +30,50 @@ function Contact_aaron() {
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+    // Email validation using regular expression
+    const isValid = /\S+@\S+\.\S+/.test(event.target.value);
+    setValidEmail(isValid);
+
   };
 
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
 
+const handleWhatapp = (event) => {
+  alert('Here is our Whatsapp number: 010-9999999 ');
+}
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Perform form submission logic here
-    // You can use the values from the state variables (name, email, message) to send the feedback
+    if (!validEmail) {
+      alert('Please enter a valid email address');
+      return;
+    } else {
+      // reset the form after submitted
+      alert('You have successfully submitted the form');
+      setName('');
+      setEmail('');
+      setMessage('');
+
+    }
+
+
+
   };
+  const handleReset = (event) => {
+    event.preventDefault();
+
+
+    //Perform form reset logic here
+
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
+
   return (
     <>
 
@@ -49,10 +83,11 @@ function Contact_aaron() {
         </h5>
       </div>
       <div class="container">
+        {/* Container for content for each card - Start - */}
         <div class="d-flex flex-row  ">
           <div class="pl-5 pt-3 ">
-
-            <div class="card " style={{ height: '300px' }}>
+            {/* Card container for content  - Start - */}
+            <div class="card ">
 
               <div class="card-body cardbg-color">
                 <h4 class="card-title cardheader-color">Visit Us :</h4>
@@ -71,13 +106,14 @@ function Contact_aaron() {
 
             </div>
 
-
+            {/* Card container for content  - End - */}
           </div>
 
 
           <div class=" pl-5 pt-3 "  >
 
-            <div class="card" style={{ height: '300px' }} >
+            {/* Card container for content  - Start - */}
+            <div class="card" >
 
               <div class="card-body cardbg-color ">
                 <h4 class="card-title cardheader-color">Contact Us :</h4>
@@ -86,47 +122,57 @@ function Contact_aaron() {
                 <p> you can give us a call:  at 089 456 789 </p>
                 <p>or our WhatsApp line:  010-9999999</p>
                 <p>Our team is available during business hours to answer your queries.</p>
-                <button type="button" class="btn cardbtn-color float-right">
+                <p>  </p>
+                <button type="button" class="btn cardbtn-color float-right" onClick={handleWhatapp}>
                   Chat with via Whatsapp
                 </button>
 
               </div>
             </div>
 
+            {/* Card container for content  - End - */}
           </div>
 
         </div>
-
+        {/* Container for content for each card - End - */}
       </div>
 
-      <div class="container formbg-color " style={{ width: '2300px' }}>
+      <div class="container formbg-color mt-5 ">
 
-        <span class="d-flex flex-column justify-content-center">
-          <form onSubmit={handleSubmit} class="align-items-center">
-            <div class="form-group row  justify-content-center ">
-              <label htmlFor="name">Name:</label>
+
+        {/* User Feedback form - Start - */}
+        <h1>User Feedback Form</h1>
+        <form class="form-container ">
+          <div class="form-group row ">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
               <input class=" ml-3 pt-3 " type="text" id="name" value={name} onChange={handleNameChange} />
             </div>
-
-            <div class="form-group row justify-content-center">
-              <label htmlFor="email">Email:</label>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
               <input class=" ml-3 pt-3 " type="email" id="email" value={email} onChange={handleEmailChange} />
             </div>
-
-            <div class="form-group row justify-content-center">
-              <label htmlFor="message">Message:</label>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Message</label>
+            <div class="col-sm-10">
               <textarea class=" ml-3 pt-3 " id="message" value={message} onChange={handleMessageChange} />
             </div>
-            <div class="form-group row justify-content-center">
-              <button type="submit" class="btn cardbtn-color ml-3 float-right">Submit</button>
-              <button type="submit" class="btn cardbtn-color ml-3 float-right">Reset</button>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+              <button type="button" class="btn btn-primary ml-3" onClick={handleReset}>Reset</button>
+              <button type="button" class="btn btn-primary ml-3" onClick={handleSubmit}>Submit</button>
             </div>
-          </form>
+          </div>
+        </form>
 
-        </span>
+        {/* User Feedback form - End - */}
       </div>
 
-
+      {/* Script for Modal pop out to show google map  - Start - */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Google Map</Modal.Title>
@@ -151,9 +197,17 @@ function Contact_aaron() {
         </Modal.Footer>
       </Modal>
 
+      {/*  Script for Modal pop out to show google map  - End - */}
+
+
 
 
     </>
+
+
+
+
+
   )
 }
 
